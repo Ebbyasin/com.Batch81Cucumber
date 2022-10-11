@@ -1,5 +1,5 @@
 Feature: Parametre Kullanimi
-  @gp1
+  @bunu
   Scenario: TC01 Parametre kullaniminda ConfigReader Kullanimi
     Given kulanici "faceUrl" sayfasina gider
     Then kullanici 3 saniye bekler
@@ -20,7 +20,7 @@ Feature: Parametre Kullanimi
     When Url'in "blue" icerdigini test edelim
     And sayfayi kapatir
 
-        @gp2
+
   Scenario: TC04 Parametre kullaniminda ConfigReader Kullanimi
     Given kulanici "amznUrl" sayfasina gider
     Then kullanici 3 saniye bekler
