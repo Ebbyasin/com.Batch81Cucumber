@@ -1,4 +1,7 @@
+@PracticeTC07
 Feature: TC Verify Test Case
+
+  @PracticeTC07_01
   Scenario: TC_07_Test_Cases
 
   Given Tarayıcıyı başlatarak "http://automationexercise.com" url'sine gidin
