@@ -31,7 +31,7 @@ public class ReusableMethods {
         return target;
     }
     //========ScreenShot Web Element(Bir webelementin resmini alma)=====//
-    public static String getScreenshotWebElement(String name, WebElement element) throws IOException {
+    public static String getScreenshotWebElement(String name,WebElement element) throws IOException {
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         // TakesScreenshot is an interface of selenium that takes the screenshot
         File source = element.getScreenshotAs(OutputType.FILE);

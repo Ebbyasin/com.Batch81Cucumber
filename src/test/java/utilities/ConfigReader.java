@@ -6,23 +6,37 @@ import java.util.Properties;
 
 public class ConfigReader {
 
-    public static Properties properties;
-    static { // Her method'dan önce çalışır
-        String dosyaYolu = "configuration.properties";
+    //This class reads the configuration.properties file
+    //Create Properties instance
+    private static Properties properties;
+    static {
+        //path of the configuration file
+        String path= "configuration.properties";
         try {
-            FileInputStream fis = new FileInputStream(dosyaYolu);
+            //Opening configuration.properties file using FileInputStream
+            FileInputStream fileInputStream = new FileInputStream(path);
             properties = new Properties();
-            properties.load(fis); // fis'in okuduğu bilgileri properties'e yükledi
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            properties.load(fileInputStream);
+            //close the file
+            fileInputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
     }
+    //This method will get the key from properties file,
+    //And return the value as String
+    //We create this method to read the file
     public static String getProperty(String key){
-        /*
-        test metodundan yolladığımız string key değerini alıp
-        Properties class'ından getProperty() methodunu kullanarak
-        bu key'e ait value'yu bize getirir
-         */
-        return properties.getProperty(key);
+        String value=properties.getProperty(key);
+        return value;
     }
+    //TEST IF LOGIC WORKS
+    //    public static void main(String[] args) {
+    //        System.out.println(properties.getProperty("techproed_url"));
+    //        System.out.println(properties.getProperty("google_url"));
+    //        System.out.println(properties.getProperty("browser"));
+    //        System.out.println(properties.getProperty("fasdgasdgads"));
+    //    }
+
 }
