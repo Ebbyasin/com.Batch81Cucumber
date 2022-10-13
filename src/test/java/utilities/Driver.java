@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
 
@@ -38,33 +39,28 @@ public class Driver {
     public static WebDriver getDriver() {  //bugune kadar TestBase classina extends ederek kullandigimiz driver yerine
         if (driver == null) {           //bundan sonra Driver classindan kullanacagimiz getDriver static methodunu
             // driver==null -->driver a deger atanmamissa calis,atanmissa 34-37 arasi calismaz,direk return a gider.
-              switch (ConfigReader.getProperty("browser")){
-                  case "chrome":
-                      WebDriverManager.chromedriver().setup();
-                      driver=new ChromeDriver();
-                      break;
-                  case "edge":
-                      WebDriverManager.edgedriver().setup();
-                      driver=new EdgeDriver();
-                      break;
-                  case "firefox":
-                      WebDriverManager.firefoxdriver().setup();
-                      driver=new FirefoxDriver();
-                      break;
-                  case "opera":
-                      WebDriverManager.operadriver().setup();
-                      driver=new OperaDriver();
-                      break;
-                  case "headless-chrome" :
-                      WebDriverManager.chromedriver().setup();
-                      driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
-                      break;
-                  default:
-              }
+            switch (ConfigReader.getProperty("browser")){
+                case "chrome" :
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
+                    break;
+                case "safari" :
+                    WebDriverManager.safaridriver().setup();
+                    driver=new SafariDriver();
+                    break;
+                case "firefox" :
+                    WebDriverManager.firefoxdriver().setup();
+                    driver=new FirefoxDriver();
+                    break;
+                case "headless-chrome":
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
+                    break;
+                default:
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
 
-
-            WebDriverManager.chromedriver().setup();    //kullanacagiz
-            driver = new ChromeDriver();
+            }
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         }
