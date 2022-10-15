@@ -1,5 +1,5 @@
 @yasin
 Feature: US011 Class Work
 Scenario:  TC01_kullanici_sutun_basligi_ile_liste_alabilmeli
-      Given kulanici "guruUrl" sayfasina gider
+      Given kullanici "guruUrl" anasayfasinda
       And "% Change" sutunundaki tum degerleri yazdirir

@@ -1,30 +1,27 @@
 Feature: Parametre Kullanimi
-  @bunu
+
   Scenario: TC01 Parametre kullaniminda ConfigReader Kullanimi
-    Given kulanici "faceUrl" sayfasina gider
+    Given kullanici "faceUrl" sayfasina gider
     Then kullanici 3 saniye bekler
-    When Url'in "facebook" icerdigini test edelim
+    When url'nin "facebook" icerdigini test edelim
     And sayfayi kapatir
-
-    @gp2
+  @gp2
   Scenario: TC02 Parametre kullaniminda ConfigReader Kullanimi
-    Given kulanici "google" sayfasina gider
+    Given kullanici "google" sayfasina gider
     Then kullanici 3 saniye bekler
-    When Url'in "google" icerdigini test edelim
+    When url'nin "google" icerdigini test edelim
     And sayfayi kapatir
 
-      @gp1
   Scenario: TC03 Parametre kullaniminda ConfigReader Kullanimi
-    Given kulanici "brcUrl" sayfasina gider
+    Given kullanici "brcUrl" sayfasina gider
     Then kullanici 3 saniye bekler
-    When Url'in "blue" icerdigini test edelim
+    When url'nin "blue" icerdigini test edelim
     And sayfayi kapatir
-
 
   Scenario: TC04 Parametre kullaniminda ConfigReader Kullanimi
-    Given kulanici "amznUrl" sayfasina gider
+    Given kullanici "amazonUrl" sayfasina gider
     Then kullanici 3 saniye bekler
-    When Url'in "amazon" icerdigini test edelim
+    When url'nin "amazon" icerdigini test edelim
     And sayfayi kapatir
 
 
