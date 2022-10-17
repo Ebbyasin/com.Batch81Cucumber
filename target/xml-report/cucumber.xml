@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="53.503">
-    <testcase classname="Amazon Search" name="TC03 kullanici amazonda iphone aratir" time="51.78">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="126.325">
+    <testcase classname="Amazon Search" name="TC03 kullanici amazonda iphone aratir" time="124.575">
         <system-out><![CDATA[Given kullanici amazon sayfasina gider......................................passed
 Then kullanici iphone icin arama yapar......................................passed
 And sonuclarin iphone icerdigini test eder..................................passed
